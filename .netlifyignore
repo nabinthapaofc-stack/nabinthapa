@@ -1,0 +1,15 @@
+node_modules
+.git
+.env
+.env.local
+.DS_Store
+src
+public
+index.html
+vite.config.ts
+tsconfig.json
+postcss.config.js
+tailwind.config.ts
+eslint.config.js
+package.json
+README.md
