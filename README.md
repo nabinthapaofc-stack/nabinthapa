@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
+# Nabin's Portfolio
 
-## Project info
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Hosted on GitHub Pages.
 
-**URL**: https://lovable.dev/projects/0af03f0a-34db-4490-a248-2c3615b5eb25
+## Setup & Deployment
 
-## How can I edit this code?
+### Local Development
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/0af03f0a-34db-4490-a248-2c3615b5eb25) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+\\\ash
+npm install
 npm run dev
-```
+\\\
 
-**Edit a file directly in GitHub**
+The site will be available at \http://localhost:8080\
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build
 
-**Use GitHub Codespaces**
+\\\ash
+npm run build
+\\\
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### GitHub Pages Deployment
 
-## What technologies are used for this project?
+This repository is configured to automatically deploy to GitHub Pages via GitHub Actions.
 
-This project is built with:
+**Site URL**: https://nabinthapaofc-stack.github.io/nabinthapa/
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+#### Configuration Steps
 
-## How can I deploy this project?
+1. Go to repository **Settings**  **Pages**
+2. Under "Build and deployment":
+   - **Source**: Deploy from a branch
+   - **Branch**: \gh-pages\
+   - **Folder**: \/ (root)\
+3. Click **Save**
 
-Simply open [Lovable](https://lovable.dev/projects/0af03f0a-34db-4490-a248-2c3615b5eb25) and click on Share -> Publish.
+#### Custom Domain (Optional)
 
-## Can I connect a custom domain to my Lovable project?
+Add \
+abinbikram.com\ in Settings  Pages  Custom domain
 
-Yes, you can!
+## Tech Stack
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- React 18 | Vite | Tailwind CSS | shadcn/ui | Recharts
