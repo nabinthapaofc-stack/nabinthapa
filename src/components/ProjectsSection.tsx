@@ -24,13 +24,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "Ma Yatri Transport App",
-    category: "Mobile Application",
-    description: "A comprehensive transport application for Nepal, helping users navigate public transportation efficiently.",
+    title: "Poster Coming Soon",
+    category: "Poster Design",
+    description: "Creative poster design featuring bold typography and modern visual elements with a striking gradient background.",
     image: pendingImg,
-    tags: ["React Native", "TypeScript", "UI/UX Design"],
+    tags: ["Graphic Design", "Typography", "Visual Design"],
     link: "#",
-    comingSoon: true,
   },
 ];
 
@@ -67,11 +66,6 @@ const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {project.comingSoon && (
-                  <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-                    <span className="text-primary font-display font-bold text-lg">Coming Soon</span>
-                  </div>
-                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
