@@ -1,7 +1,16 @@
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, ArrowRight, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import scienceClubImg from "@/assets/projects/science-club.png";
 import artClubImg from "@/assets/projects/art-club.png";
 import pendingImg from "@/assets/projects/pending-submissions.png";
+import mayatriImg from "@/assets/projects/mayatri-logo.jpg";
 
 const projects = [
   {
@@ -27,7 +36,7 @@ const projects = [
     title: "Ma Yatri Transport App",
     category: "Mobile Application",
     description: "A smart public transport app for Nepal that helps users find bus routes, track live locations, and plan journeys efficiently across the country.",
-    image: pendingImg,
+    image: mayatriImg,
     tags: ["React Native", "UI/UX Design", "Mobile App"],
     link: "#",
   },
@@ -43,6 +52,8 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+
   return (
     <section id="projects" className="py-24 md:py-32 relative">
       {/* Background */}
@@ -101,12 +112,12 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Link */}
-                <a
-                  href={project.link}
+                <button
+                  onClick={() => setSelectedProject(project)}
                   className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300"
                 >
                   View Project <ArrowRight size={16} />
-                </a>
+                </button>
               </div>
             </div>
           ))}
@@ -119,6 +130,50 @@ const ProjectsSection = () => {
           </a>
         </div>
       </div>
+
+      {/* Project Dialog */}
+      <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
+        <DialogContent className="max-w-3xl bg-card border-border/50">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-display gradient-text">
+              {selectedProject?.title}
+            </DialogTitle>
+            <DialogDescription className="text-muted-foreground">
+              {selectedProject?.category}
+            </DialogDescription>
+          </DialogHeader>
+          
+          {selectedProject && (
+            <div className="space-y-4">
+              {/* Project Image */}
+              <div className="relative rounded-lg overflow-hidden">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-auto max-h-[60vh] object-contain bg-secondary/20"
+                />
+              </div>
+              
+              {/* Description */}
+              <p className="text-muted-foreground">
+                {selectedProject.description}
+              </p>
+              
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1 rounded-full bg-primary/20 text-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
